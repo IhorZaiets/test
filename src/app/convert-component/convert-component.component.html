@@ -1,0 +1,16 @@
+<form class="form">
+    <div class="form__controls-container">
+        <select (change)="leftDropdownChange($event)" name="leftDropdownOption" id="leftDropdownOption" class='form__select'>
+            <option *ngFor="let c of currensies" [value]="c.rate">{{c.cc}}</option>
+            <option [value]="1">UAH</option>
+        </select>
+        <input type="number" #leftInput (input)='leftInputHandler($event)' [value]="leftInputValue" class="form__input" />
+    </div>
+    <div class="form__controls-container">
+        <input type="number" #rightInput (input)='rightInputHandler($event)' [value]="rightInputValue" class="form__input"/>
+        <select (change)="rightDropdownChange($event)" name="rightDropdownOption" id="rightDropdownOption" class='form__select'>
+            <option *ngFor="let c of currensies" [value]="c.rate">{{c.cc}}</option>
+            <option [value]=1>UAH</option>
+        </select>
+    </div>
+</form>
